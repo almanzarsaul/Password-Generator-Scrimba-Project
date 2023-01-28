@@ -21,7 +21,16 @@
         Generate a <br /><span class="green-text">random password</span>
       </h1>
       <p class="subheading">Never use an insecure password again.</p>
-      <input type="range" name="length" id="length-slider" min="6" max="16" />
+      <label for="length-slider">Length:</label>
+      <input
+        type="range"
+        name="length"
+        id="length-slider"
+        min="6"
+        max="20"
+        oninput="adjustLength()"
+      />
+      <p id="length-value"></p>
       <button id="button-el" onclick="getPasswords()" class="button">
         Generate passwords
       </button>

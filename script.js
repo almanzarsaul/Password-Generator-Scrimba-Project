@@ -2,6 +2,17 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 let passwordOneEl = document.getElementById("password-field-one");
 let passwordTwoEl = document.getElementById("password-field-two");
 let sliderEl = document.getElementById("length-slider");
+let lengthValueEl = document.getElementById("length-value")
+let defaultValue = 11;
+
+window.addEventListener("load", function() {
+    sliderEl.value = defaultValue;
+    adjustLength()
+})
+
+function adjustLength() {
+    lengthValueEl.textContent = sliderEl.value;
+}
 
 function generatePassword(lengthOfPassword) {
     let password = ""
