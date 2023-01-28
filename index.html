@@ -5,6 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator - Scrimba Project</title>
+    <!-- Google Fonts: Karla Extra Bold & Inter Regular & Inter Medium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@800&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <h1 class="title">Generate a random password</h1>
+    <p class="subtitle">Never use an insecure password again.</p>
+    <button id="button-el" onclick="getPasswords()" class="button">
+      Generate passwords
+    </button>
+    <div class="line-break"></div>
+    <div class="password-field" id="password-field-one"></div>
+    <div class="password-field" id="password-field-two"></div>
+    <script src="script.js"></script>
+  </body>
 </html>
