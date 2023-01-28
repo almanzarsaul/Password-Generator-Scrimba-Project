@@ -144,7 +144,7 @@ function copyToClipboard(text) {
     // Copy the text inside the text field
     navigator.clipboard.writeText(text);
 
-    // Log the copied text
-    console.log("Copied the text: " + text);
+    // Alert the copied text
+    alert("Copied the text: " + text);
   }
 }
