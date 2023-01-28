@@ -2,9 +2,9 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 let passwordOneEl = document.getElementById("password-field-one");
 let passwordTwoEl = document.getElementById("password-field-two");
 
-function generatePassword() {
+function generatePassword(length) {
     let password = ""
-    for (let i=0; i < 15; i++) {
+    for (let i=0; i < length; i++) {
         let randomIndex = Math.floor(Math.random() * characters.length); // Gets a random index based on the length of the characters array
         password += characters[randomIndex];
     }
@@ -12,7 +12,7 @@ function generatePassword() {
 }
 
 function getPasswords() {
-    passwordOneEl.textContent = generatePassword();
-    passwordTwoEl.textContent = generatePassword();
+    passwordOneEl.textContent = generatePassword(15);
+    passwordTwoEl.textContent = generatePassword(15);
 }
 
