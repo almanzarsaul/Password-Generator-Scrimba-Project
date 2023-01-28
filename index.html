@@ -12,16 +12,25 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@800&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 class="title">Generate a random password</h1>
-    <p class="subtitle">Never use an insecure password again.</p>
-    <button id="button-el" onclick="getPasswords()" class="button">
-      Generate passwords
-    </button>
-    <div class="line-break"></div>
-    <div class="password-field" id="password-field-one"></div>
-    <div class="password-field" id="password-field-two"></div>
+    <div class="container">
+      <h1 class="heading">
+        Generate a <br /><span class="green-text">random password</span>
+      </h1>
+      <p class="subheading">Never use an insecure password again.</p>
+      <button id="button-el" onclick="getPasswords(16)" class="button">
+        Generate passwords
+      </button>
+      <div class="separator"></div>
+      <div class="password-fields">
+        <div class="password-field" id="password-field-one"></div>
+        <div class="password-field" id="password-field-two"></div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
