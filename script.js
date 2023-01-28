@@ -98,25 +98,19 @@ let sliderEl = document.getElementById("length-slider");
 let lengthValueEl = document.getElementById("length-value");
 let defaultValue = 16;
 
-let useSymbols = false;
-let useNumbers = true;
+// let useNumbers = true;
+// let useSymbols = true;
+
+let numbersCheckboxEl = document.getElementById("numbers-checkbox");
+let symbolsCheckboxEl = document.getElementById("symbols-checkbox");
+// // Set checkboxes to same value as JavaScript
+// numbersCheckboxEl.checked = useNumbers;
+// symbolsCheckboxEl.checked = useSymbols;
 
 window.addEventListener("load", function () {
   sliderEl.value = defaultValue;
   adjustLength();
 });
-
-// 91 total characters
-// 52 letters [0-51]
-// 10 numbers [52-62]
-// 30 symbols [63-92]
-if (useSymbols === true && useNumbers === false) {
-  charactersToUse = charactersToUse.concat(characters.slice(63, 92)); // if symbols is selected but not numbers, append symbols.
-} else if (useSymbols === false && useNumbers === true) {
-  charactersToUse = charactersToUse.concat(characters.slice(52, 62)); // if symbols is not selected but numbers is, append numbers.
-} else {
-  charactersToUse = characters; // if both are selected, just use all characters
-}
 
 function adjustLength() {
   lengthValueEl.textContent = sliderEl.value;
@@ -132,6 +126,14 @@ function generatePassword(lengthOfPassword) {
 }
 
 function getPasswords() {
+  charactersToUse = characters.slice(0, 52); // Reset characters to only letters or else it will keep adding the selected array.
+  if (numbersCheckboxEl.checked) {
+    charactersToUse = charactersToUse.concat(characters.slice(52, 62)); // if symbols is not selected but numbers is, append numbers.
+  }
+  if (symbolsCheckboxEl.checked) {
+    charactersToUse = charactersToUse.concat(characters.slice(63, 92)); // if symbols is selected but not numbers, append symbols.
+  }
+  console.log(charactersToUse);
   passwordOneEl.textContent = generatePassword(sliderEl.value);
   passwordTwoEl.textContent = generatePassword(sliderEl.value);
 }
