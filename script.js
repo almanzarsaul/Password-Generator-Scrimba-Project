@@ -94,6 +94,8 @@ const characters = [
 let charactersToUse = characters.slice(0, 52); // User always uses letters at least.
 let passwordOneEl = document.getElementById("password-field-one");
 let passwordTwoEl = document.getElementById("password-field-two");
+let passwordThreeEl = document.getElementById("password-field-three");
+let passwordFourEl = document.getElementById("password-field-four");
 let sliderEl = document.getElementById("length-slider");
 let lengthValueEl = document.getElementById("length-value");
 let defaultValue = 16;
@@ -136,6 +138,8 @@ function getPasswords() {
   console.log(charactersToUse);
   passwordOneEl.textContent = generatePassword(sliderEl.value);
   passwordTwoEl.textContent = generatePassword(sliderEl.value);
+  passwordThreeEl.textContent = generatePassword(sliderEl.value);
+  passwordFourEl.textContent = generatePassword(sliderEl.value);
 }
 
 function copyToClipboard(text) {
