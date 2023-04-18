@@ -86,3 +86,9 @@ body {
 .length-slider {
     border: 2px solid red;
 }
+
+@media (max-width: 640px) {
+    .password-field {
+        width: 100%;
+    }
+}
